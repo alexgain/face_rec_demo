@@ -53,12 +53,9 @@ while True:
         if not grabbed:
             break
         if num_frames % skip_process == 0:
-            W = frame.shape
+            W = frame.shape[1]
             crop = 200
-            print(type(frame))
-            print(len(frame))
-            print(frame.shape)
-            frame = frame[:,crop:W-crop]
+            frame = frame[:,crop:(W-crop),:]
             # convert the input frame from BGR to RGB then resize it to have
             # a width of 750px (to speedup processing)
             rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
