@@ -145,3 +145,4 @@ if writer is not None:
     
 t2 = time.time()
 print('Time elapsed:',(t2-t1)/60,'minutes')
+print('done')
