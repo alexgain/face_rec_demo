@@ -1,0 +1,2 @@
+python recognize_faces_video_file.py --encodings encodings.pickle --input videos/sean_example.mp4 --output output/sean_example_output.avi --display 0
+gdrive update 1S17ImWj0h9AwDd7ZYq2inFpE8xrBwTTT output/sean_example_output.avi
