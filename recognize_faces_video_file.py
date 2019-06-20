@@ -33,7 +33,7 @@ print("[INFO] processing video...")
 stream = cv2.VideoCapture(args["input"])
 writer = None
 
-skip = 4
+skip = 1
 num_frames = -1
 
 t1 = time.time()
@@ -47,7 +47,7 @@ while True:
 	# end of the stream
     if not grabbed:
         break
-    if num_frames % 4 == 0:
+    if num_frames % skip == 0:
         # convert the input frame from BGR to RGB then resize it to have
         # a width of 750px (to speedup processing)
     	rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
