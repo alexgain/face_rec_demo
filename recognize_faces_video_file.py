@@ -61,8 +61,8 @@ while True:
             # convert the input frame from BGR to RGB then resize it to have
             # a width of 750px (to speedup processing)
             rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
-            # rgb = imutils.resize(frame, width=750*2,height = frame.shape[0])
-            # r = frame.shape[1] / float(rgb.shape[1])
+            rgb = imutils.resize(frame, width=round(frame.shape[1]*0.7))
+            r = frame.shape[1] / float(rgb.shape[1])
             
             	# detect the (x, y)-coordinates of the bounding boxes
             	# corresponding to each face in the input frame, then compute
@@ -103,10 +103,10 @@ while True:
             	# loop over the recognized faces
             for ((top, right, bottom, left), name) in zip(boxes, names):
                 # rescale the face coordinates
-                # top = int(top * r)
-                # right = int(right * r)
-                # bottom = int(bottom * r)
-                # left = int(left * r)
+                top = int(top * r)
+                right = int(right * r)
+                bottom = int(bottom * r)
+                left = int(left * r)
                 # draw the predicted face name on the image
                 cv2.rectangle(frame, (left, top), (right, bottom),
             			(0, 255, 0), 2)
