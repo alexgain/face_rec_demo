@@ -108,24 +108,24 @@ while True:
 	# if the video writer is None *AND* we are supposed to write
 	# the output video to disk initialize the writer
     if writer is None and args["output"] is not None:
-		fourcc = cv2.VideoWriter_fourcc(*"MJPG")
-		writer = cv2.VideoWriter(args["output"], fourcc, 24,
+        fourcc = cv2.VideoWriter_fourcc(*"MJPG")
+        writer = cv2.VideoWriter(args["output"], fourcc, 24,
 			(round(frame.shape[1]/2), round(frame.shape[0]/2)), True)
-
-	# if the writer is not None, write the frame with recognized
+        
+    # if the writer is not None, write the frame with recognized
 	# faces t odisk
-	if writer is not None:
-		writer.write(frame)
+    if writer is not None:
+        writer.write(frame)
 
 	# check to see if we are supposed to display the output frame to
 	# the screen
-	if args["display"] > 0:
-		cv2.imshow("Frame", frame)
-		key = cv2.waitKey(1) & 0xFF
+    if args["display"] > 0:
+        cv2.imshow("Frame", frame)
+        key = cv2.waitKey(1) & 0xFF
 
 		# if the `q` key was pressed, break from the loop
-		if key == ord("q"):
-			break
+        if key == ord("q"):
+            break
 
 # close the video file pointers
 stream.release()
