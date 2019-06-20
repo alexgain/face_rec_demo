@@ -36,6 +36,8 @@ writer = None
 skip = 4
 num_frames = -1
 
+t1 = time.time()
+
 # loop over frames from the video file stream
 while True:
 	# grab the next frame
@@ -133,3 +135,6 @@ stream.release()
 # check to see if the video writer point needs to be released
 if writer is not None:
 	writer.release()
+    
+t2 = time.time()
+print('Time elapsed:',(t2-t1)/60,'minutes')
