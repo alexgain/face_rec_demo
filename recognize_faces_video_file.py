@@ -112,7 +112,7 @@ while True:
     if writer is None and args["output"] is not None:
         fourcc = cv2.VideoWriter_fourcc(*"MJPG")
         writer = cv2.VideoWriter(args["output"], fourcc, 24,
-			(round(frame.shape[1]/2), round(frame.shape[0]/2)), True)
+			(frame.shape[1], frame.shape[0]), True)
         
     # if the writer is not None, write the frame with recognized
 	# faces t odisk
