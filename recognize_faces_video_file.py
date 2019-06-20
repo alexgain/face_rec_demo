@@ -122,7 +122,7 @@ while True:
             fourcc = cv2.VideoWriter_fourcc(*"mp4v")
             # fourcc = cv2.cv.CV_FOURCC(*'H264')
             # writer = cv2.VideoWriter(args["output"], fourcc, 24,
-            writer = cv2.VideoWriter(args["output"], fourcc, 24,
+            writer = cv2.VideoWriter(args["output"], fourcc, 30,
     			(frame.shape[1], frame.shape[0]), True)
             
         # if the writer is not None, write the frame with recognized
