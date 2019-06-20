@@ -54,8 +54,10 @@ while True:
             break
         if num_frames % skip_process == 0:
             W = frame.shape[1]
-            crop = 200
-            frame = frame[:,crop:(W-crop),:]
+            H = frame.shape[0]
+            crop_w = 400
+            crop_h = 600
+            frame = frame[:H-crop_h,crop_w:(W-crop_w),:]
             # convert the input frame from BGR to RGB then resize it to have
             # a width of 750px (to speedup processing)
             rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
