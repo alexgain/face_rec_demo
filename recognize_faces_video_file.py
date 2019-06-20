@@ -33,7 +33,7 @@ print("[INFO] processing video...")
 stream = cv2.VideoCapture(args["input"])
 writer = None
 
-skip = 1
+skip = 2
 num_frames = -1
 
 t1 = time.time()
@@ -52,7 +52,7 @@ while True:
         # a width of 750px (to speedup processing)
     	rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     	# rgb = imutils.resize(frame, width=750)
-    	# r = (frame.shape[1] / float(rgb.shape[1]))*2
+    	# r = frame.shape[1] / float(rgb.shape[1])
     
     	# detect the (x, y)-coordinates of the bounding boxes
     	# corresponding to each face in the input frame, then compute
