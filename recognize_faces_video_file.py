@@ -56,7 +56,7 @@ while True:
             W = frame.shape[1]
             H = frame.shape[0]
             crop_w = 400
-            crop_h = 200
+            crop_h = 0
             frame = frame[crop_h:,crop_w:(W-crop_w),:]
             # convert the input frame from BGR to RGB then resize it to have
             # a width of 750px (to speedup processing)
