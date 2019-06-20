@@ -61,7 +61,7 @@ while True:
         # convert the input frame from BGR to RGB then resize it to have
         # a width of 750px (to speedup processing)
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
-        rgb = imutils.resize(frame, width=round(frame.shape[1]*0.65))
+        rgb = imutils.resize(frame, width=round(frame.shape[1]*0.72))
         r = frame.shape[1] / float(rgb.shape[1])
 
         if num_frames % skip_process == 0:            
