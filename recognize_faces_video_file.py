@@ -61,7 +61,7 @@ while True:
         # convert the input frame from BGR to RGB then resize it to have
         # a width of 750px (to speedup processing)
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
-        rgb = imutils.resize(frame, width=round(frame.shape[1]*0.6))
+        rgb = imutils.resize(frame, width=round(frame.shape[1]*0.45))
         r = frame.shape[1] / float(rgb.shape[1])
 
         if num_frames % skip_process == 0:            
@@ -118,8 +118,8 @@ while True:
     	# if the video writer is None *AND* we are supposed to write
     	# the output video to disk initialize the writer
         if writer is None and args["output"] is not None:
-            # fourcc = cv2.VideoWriter_fourcc(*"MJPG")
-            fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+            fourcc = cv2.VideoWriter_fourcc(*"MJPG")
+            # fourcc = cv2.VideoWriter_fourcc(*"mp4v")
             # fourcc = cv2.cv.CV_FOURCC(*'H264')
             # writer = cv2.VideoWriter(args["output"], fourcc, 24,
             writer = cv2.VideoWriter(args["output"], fourcc, 24,
