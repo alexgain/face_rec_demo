@@ -33,7 +33,7 @@ print("[INFO] processing video...")
 stream = cv2.VideoCapture(args["input"])
 writer = None
 
-skip = 2
+skip = 8
 num_frames = -1
 
 t1 = time.time()
