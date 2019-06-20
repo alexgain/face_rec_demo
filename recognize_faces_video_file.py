@@ -55,6 +55,9 @@ while True:
         if num_frames % skip_process == 0:
             W = frame.shape
             crop = 200
+            print(type(frame))
+            print(len(frame))
+            print(frame.shape)
             frame = frame[:,crop:W-crop]
             # convert the input frame from BGR to RGB then resize it to have
             # a width of 750px (to speedup processing)
